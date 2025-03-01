@@ -92,12 +92,12 @@ namespace dnSpy.Contracts.Documents.TreeView.Resources {
 				return;
 
 			var serializedData = ((BinaryResourceData)ResourceElement.ResourceData).Data;
+#pragma warning disable SYSLIB0011
 			var formatter = new BinaryFormatter();
 			try {
-#pragma warning disable SYSLIB0011
 				deserializedData = formatter.Deserialize(new MemoryStream(serializedData));
-#pragma warning restore SYSLIB0011
 			}
+#pragma warning restore SYSLIB0011
 			catch {
 				return;
 			}

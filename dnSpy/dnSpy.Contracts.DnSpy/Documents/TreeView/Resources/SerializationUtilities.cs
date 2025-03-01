@@ -70,9 +70,9 @@ namespace dnSpy.Contracts.Documents.TreeView.Resources {
 		public static byte[] Serialize(object obj) {
 			//TODO: The asm names of the saved types are saved in the serialized data. If the current
 			//		module is eg. a .NET 2.0 asm, you should replace the versions from 4.0.0.0 to 2.0.0.0.
+#pragma warning disable SYSLIB0011
 			var formatter = new BinaryFormatter();
 			var outStream = new MemoryStream();
-#pragma warning disable SYSLIB0011
 			formatter.Serialize(outStream, obj);
 #pragma warning restore SYSLIB0011
 			return outStream.ToArray();
